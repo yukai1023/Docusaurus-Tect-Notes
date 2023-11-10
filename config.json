@@ -1,6 +1,9 @@
 {
   "index_name": "prod_blog",
-  "start_urls": ["http://host.docker.internal:3000/"],
+  "start_urls": ["https://kai-tect-notes.vercel.app/"],
+  "sitemap_urls": [
+    "https://kai-tect-notes.vercel.app/sitemap.xml"
+  ],
   "sitemap_alternate_links": true,
   "stop_urls": ["/tests"],
   "selectors": {
