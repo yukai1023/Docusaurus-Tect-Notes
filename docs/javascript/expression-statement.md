@@ -8,7 +8,6 @@ sidebar_position: 1
 ## Expression（表達式）
 程式碼執行後**會回傳結果**。完整類別可至 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Expressions_and_operators)。
 
-主要類別為：
 
 - ### 純值
 ```js
@@ -62,7 +61,6 @@ let area = function () {}
 
 程式碼執行後**不會回傳結果**。完整類別可至 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements)。
 
-主要類別為：
 - ### 宣告
   - var
   - const
@@ -87,12 +85,12 @@ for (let i = 0; i < 9; i++) {
   - switch
   - try...catch
 ```js
-  let result;
-  if (a > 0) {
-    result = 'positive';
-  } else {
-    result = 'NOT positive';
-  }
+let result;
+if (a > 0) {
+  result = 'positive';
+} else {
+  result = 'NOT positive';
+}
 ```
 - ### 其他
   - debugger
@@ -103,6 +101,7 @@ for (let i = 0; i < 9; i++) {
 
 - JavaScript 語句類型分別為表達式和陳述式。
 - 表達式會回傳結果，陳述式則不會。
+
 
 
 :::
