@@ -78,13 +78,7 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/yukai1023',
             label: 'GitHub',
             position: 'right',
           },
@@ -97,7 +91,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Intro',
                 to: '/',
               },
             ],
