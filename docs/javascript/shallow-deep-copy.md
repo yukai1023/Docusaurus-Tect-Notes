@@ -142,15 +142,15 @@ console.log(clone); // { name: 'Alice', age: 25, contact: { email: 'alice_clone@
 通過遞迴方式複製每個屬性（包括嵌套的對象和數組）來實現深拷貝。這保證了拷貝對象在結構上與原始對象完全獨立，對拷貝對象的任何修改都不會影響原始對象，反之亦然：
 ```js
 function deepCopy(obj) {
-  // 如果 obj 是基本類型之一，將直接返回。
+  // 如果 obj 是基本類型之一，將直接返回
   if (obj === null || typeof obj !== 'object') {
       return obj;
   }
 
-  // 判斷 obj 是物件還是陣列，返回空物件或空陣列。
+  // 判斷 obj 是物件還是陣列，返回空物件或空陣列
   let tempObj = Array.isArray(obj) ? [] : {};
 
-  // 每個屬性的拷貝被賦值給 tempObj 的對應屬性。
+  // 每個屬性的拷貝被賦值給 tempObj 的對應屬性
   for (let key in obj) {
     tempObj[key] = deepCopy(obj[key]);
   }
@@ -158,6 +158,28 @@ function deepCopy(obj) {
   // 返回深拷貝的對象
   return tempObj;
 }
+
+const originalObj = {
+    name: 'Alice',
+    age: 30,
+    address: {
+        street: '123 Main St',
+        city: 'Wonderland'
+    },
+    hobbies: ['reading', 'coding']
+};
+
+const copiedObj = deepCopy(originalObj);
+
+// 修改原始對象
+originalObj.address.city = 'New Wonderland';
+originalObj.hobbies.push('painting');
+
+// 修改拷貝对象
+copiedObj.name = 'Bob';
+
+console.log(originalObj); // address和hobbies被修改，name保持不變
+console.log(copiedObj);   // name被修改，address和hobbies保持不變
 ```
 :::warning[限制與缺點]
 - **特殊對象處理不足**：不能處理像 Date、RegExp、Function、Map、Set 等特殊類型的對象。
