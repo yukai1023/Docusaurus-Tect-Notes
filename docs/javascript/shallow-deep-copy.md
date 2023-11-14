@@ -109,6 +109,11 @@ dataCP[0].name = 'Tom';
 console.log(data); // [{ name: 'Yukai', age: 25 }]
 console.log(dataCP); // [{ name: 'Tom', age: 25 }, { name: 'Amy', age: 50 }]
 ```
+:::warning[限制與缺點]
+- **無法處理循環引用**：如果對象中存在循環引用（例如，對象的一個屬性直接或間接地引用了對象本身），這種方法會拋出錯誤。
+- **忽略屬性值**：在拷貝過程中，對象中的任意的函式、undefined 以及 symbol 值會被忽略。
+- **特殊對象處理不足**：不能處理像 Date、RegExp、Function、Map、Set 等特殊類型的對象。
+:::
 
 ### 深拷貝方法 — [structuredClone](https://developer.mozilla.org/zh-CN/docs/Web/API/structuredClone)
 它是一個全局方法，用於創建給定值的深拷貝，使用的是[結構化克隆算法](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API/Structured_clone_algorithm)，這意味著它不僅複製了對象本身，還複製了所有嵌套的對象：
@@ -131,6 +136,31 @@ console.log(clone); // { name: 'Alice', age: 25, contact: { email: 'alice_clone@
 :::warning[限制與缺點]
 - **不支援所有類型**：雖然 structuredClone 支援許多 JavaScript 內建類型，但它不支援某些專門的對象類型，如函數、錯誤對象、DOM 節點等。嘗試克隆這些不支援的類型會導致錯誤。
 - **可能改變原始對象**：如果原始對象包含可轉移對象（如 [ArrayBuffer](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)），在克隆過程中這些對象會從原始對象轉移到新對象，使得它們在原始對象中不再可用。
+:::
+
+### 深拷貝方法 — 遞迴實現
+通過遞迴方式複製每個屬性（包括嵌套的對象和數組）來實現深拷貝。這保證了拷貝對象在結構上與原始對象完全獨立，對拷貝對象的任何修改都不會影響原始對象，反之亦然：
+```js
+function deepCopy(obj) {
+  // 如果 obj 是基本類型之一，將直接返回。
+  if (obj === null || typeof obj !== 'object') {
+      return obj;
+  }
+
+  // 判斷 obj 是物件還是陣列，返回空物件或空陣列。
+  let tempObj = Array.isArray(obj) ? [] : {};
+
+  // 每個屬性的拷貝被賦值給 tempObj 的對應屬性。
+  for (let key in obj) {
+    tempObj[key] = deepCopy(obj[key]);
+  }
+
+  // 返回深拷貝的對象
+  return tempObj;
+}
+```
+:::warning[限制與缺點]
+- **特殊對象處理不足**：不能處理像 Date、RegExp、Function、Map、Set 等特殊類型的對象。
 :::
 
 :::info[文章內容參考來源：]
