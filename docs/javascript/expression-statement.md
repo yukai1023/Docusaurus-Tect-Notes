@@ -62,28 +62,28 @@ let area = function () {}
 程式碼執行後**不會回傳結果**。完整類別可至 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements)。
 
 - ### 宣告
-  - var
-  - const
-  - let
-  - class
-  - return
+  - `var`
+  - `const`
+  - `let`
+  - `class`
+  - `return`
 ```js
 const a = 10;
 let b = 20;
 ```
 - ### 迴圈
-  - for
-  - while
-  - do...while
+  - `for`
+  - `while`
+  - `do...while`
 ```js
 for (let i = 0; i < 9; i++) {
   str = str + i;
 }
 ```
 - ### 流程控制
-  - if…else
-  - switch
-  - try...catch
+  - `if…else`
+  - `switch`
+  - `try...catch`
 ```js
 let result;
 if (a > 0) {
@@ -93,9 +93,9 @@ if (a > 0) {
 }
 ```
 - ### 其他
-  - debugger
-  - export
-  - import
+  - `debugger`
+  - `export`
+  - `import`
 
 :::tip[彙整]
 
