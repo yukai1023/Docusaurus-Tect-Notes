@@ -21,8 +21,8 @@ JavaScript內建的型別主要可以分成**基本型別**(Primitives)與**物�
 let a = "apple";
 let b = a;
 b = "banana";
-console.log(a); //apple
-console.log(b); //banana
+console.log(a); // apple
+console.log(b); // banana
 ```
 在修改 `b` 時並不會改到 `a` 的值。
 
@@ -31,8 +31,8 @@ console.log(b); //banana
 let objA = { name: 'apple' }
 let objB = objA
 objB.name = 'banana'
-console.log(objA); //{name: 'banana'}
-console.log(objB); //{name: 'banana'}
+console.log(objA); // { name: 'banana' }
+console.log(objB); // { name: 'banana' }
 ```
 在修改 `objB` 時，也會修改到 `objA` 的值。
 
@@ -57,10 +57,10 @@ arrayCP[0] = 'black';
 let objectCP = Object.assign({}, object);
 objectCP.p2 = '4';
 
-console.log(array); // [ 'red', 'blue', 'yellow']  <= 原陣列沒有影響
-console.log(arrayCP); // [ 'black', 'blue', 'yellow']
-console.log(object); // { p1: '1', p2: '2', p3: '3'}  <= 原物件沒有影響
-console.log(objectCP); // { p1: '1', p2: '4', p3: '3'}
+console.log(array); // ['red', 'blue', 'yellow']  <= 原陣列沒有影響
+console.log(arrayCP); // ['black', 'blue', 'yellow']
+console.log(object); // { p1: '1', p2: '2', p3: '3' }  <= 原物件沒有影響
+console.log(objectCP); // { p1: '1', p2: '4', p3: '3' }
 ```
 雖然目前看起來都沒受影響，但第二層還是會有參考特性影響原物件問題：
 ```js
@@ -71,8 +71,8 @@ dataCP.push({ name: 'Amy', age: 50 });
 // 操作第二層 ： 影響原物件
 dataCP[0].name = 'Tom';
 
-console.log(data); // [{name: 'Tom', age:25}]
-console.log(dataCP); // [{name: 'Tom', age:25},{name:'Amy',age:50}]
+console.log(data); // [{ name: 'Tom', age: 25 }]
+console.log(dataCP); // [{ name: 'Tom', age: 25 }, { name:'Amy', age: 50 }]
 ```
 
 ### 淺拷貝方法 — [展開運算符(Spread Operator)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
@@ -89,10 +89,10 @@ arrayCP[0] = 'black';
 let objectCP = { ...object };
 objectCP.p2 = '4';
 
-console.log(array); // [ 'red','blue','yellow' ]  <= 原陣列沒有影響
-console.log(arrayCP); // [ 'black','blue','yellow']
-console.log(object); // {p1:'1', p2:'2', p3:'3'}  <= 原物件沒有影響
-console.log(objectCP); // {p1:'1', p2:'4', p3:'3'}
+console.log(array); // ['red', 'blue', 'yellow']  <= 原陣列沒有影響
+console.log(arrayCP); // ['black', 'blue', 'yellow']
+console.log(object); // { p1: '1', p2: '2', p3: '3' }  <= 原物件沒有影響
+console.log(objectCP); // { p1: '1', p2: '4', p3: '3' }
 ```
 但如同 `Object.assign`，第二層也會有參考特性影響原物件問題。
 
@@ -106,8 +106,8 @@ let dataCP = JSON.parse(JSON.stringify(data));
 dataCP.push({ name: 'Amy',age:50 });
 // 操作第二層：不影響原物件
 dataCP[0].name = 'Tom';
-console.log(data); // [{name:'Yukai',age:25}]
-console.log(dataCP); // [{name:'Tom',age:25},{name:'Amy',age:50}]
+console.log(data); // [{ name: 'Yukai', age: 25 }]
+console.log(dataCP); // [{ name: 'Tom', age: 25 }, { name: 'Amy', age: 50 }]
 ```
 
 ### 深拷貝方法 — [structuredClone](https://developer.mozilla.org/zh-CN/docs/Web/API/structuredClone)
