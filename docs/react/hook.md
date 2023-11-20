@@ -36,15 +36,18 @@ const [myState, setMyState] = useState(initialValue);
 ### Class Component 對比 Function Component
 ```jsx title="class component"
 class Counter extends React.Component {
+  // highlight-start
   constructor(props) {
     super(props);
     this.state = { count: 0 };
   }
+  // highlight-end
 
   render() {
     return (
       <div>
         <p>You clicked {this.state.count} times</p>
+        {/* highlight-next-line */}
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>
           Click me
         </button>
@@ -57,8 +60,67 @@ class Counter extends React.Component {
 import React, { useState } from 'react';
 
 function Counter() {
+  {/* highlight-next-line */}
   const [count, setCount] = useState(0);
 
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      {/* highlight-next-line */}
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+
+## 使用 Effect Hook
+
+Effect Hook 讓你可以使用 function component 中的 side effect，指那些發生在組件渲染流程之外的操作。這些操作包括數據獲取、訂閱、手動更改 DOM，以及其他需要在組件加載和更新時執行的操作。
+
+> **詳細可至另一篇文章 [useEffect](./useEffect) 查看。**
+
+### Class Component 對比 Function Component
+```jsx title="class component"
+class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+  // highlight-start
+  componentDidMount() {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+  componentDidUpdate() {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+  // highlight-end
+  render() {
+    return (
+      <div>
+        <p>You clicked {this.state.count} times</p>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          Click me
+        </button>
+      </div>
+    );
+  }
+}
+```
+
+```jsx title="function component"
+import React, { useState, useEffect } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+  // highlight-start
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  });
+  // highlight-end
   return (
     <div>
       <p>You clicked {count} times</p>
@@ -69,3 +131,47 @@ function Counter() {
   );
 }
 ```
+
+## 自定義 Hook
+自定義 Hook 允許你將組件邏輯提取到可重用的 function 中。當你發現自己在不同組件中重複相同的邏輯時，這就是創建自己的 Hook 的好時機。
+
+假設你需要在多個組件中使用計數器的邏輯，你可以創建一個 **`useCounter`** Hook：
+```jsx
+import React, { useState } from 'react';
+
+// highlight-start
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+  const reset = () => setCount(initialValue);
+
+  return [count, increment, decrement, reset];
+}
+// highlight-end
+```
+你可以在任何函式組件中使用這個自定義 Hook：
+```jsx
+import React from 'react';
+import useCounter from './useCounter'; // 假設 Hook 在這個路徑
+function CounterComponent() {
+  // highlight-next-line
+  const [count, increment, decrement, reset] = useCounter(0);
+
+  return (
+    <div>
+      <p>計數: {count}</p>
+      <button onClick={increment}>增加</button>
+      <button onClick={decrement}>減少</button>
+      <button onClick={reset}>重置</button>
+    </div>
+  );
+}
+```
+### 必須以「use」開頭命名
+以 「use」 開頭的命名規範幫助開發者快速識別一個函數是否是一個 Hook。並且 React 團隊提供了一個名為 [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) 的 ESLint 插件，這個插件依賴於命名規則來自動化檢測 Hook 的正確使用。
+
+### 每個使用 Hook 的 component 都有其自己獨立的 state
+每次使用 Hook ，不論是內建的 Hook (如 `useState` 或 `useEffect`) 或是自定義 Hook 時，都是在為當前 component 創建一個全新且獨立的 `state` 和 `effect`。
+這也是為什麼可以在 **component 中多次調用同一個 Hook** 的原因。
