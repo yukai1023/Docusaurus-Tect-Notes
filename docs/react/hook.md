@@ -90,14 +90,17 @@ class Example extends React.Component {
       count: 0
     };
   }
+
   // highlight-start
   componentDidMount() {
     document.title = `You clicked ${this.state.count} times`;
   }
+
   componentDidUpdate() {
     document.title = `You clicked ${this.state.count} times`;
   }
   // highlight-end
+
   render() {
     return (
       <div>
@@ -116,11 +119,13 @@ import React, { useState, useEffect } from 'react';
 
 function Example() {
   const [count, setCount] = useState(0);
+
   // highlight-start
   useEffect(() => {
     document.title = `You clicked ${count} times`;
   });
   // highlight-end
+
   return (
     <div>
       <p>You clicked {count} times</p>
