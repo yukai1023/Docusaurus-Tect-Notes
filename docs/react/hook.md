@@ -77,7 +77,7 @@ function Counter() {
 
 ## 使用 Effect Hook
 
-Effect Hook 讓你可以使用 function component 中的 side effect，指那些發生在組件渲染流程之外的操作。這些操作包括數據獲取、訂閱、手動更改 DOM，以及其他需要在組件加載和更新時執行的操作。
+Effect Hook 可以使用 function component 中的 side effect，指那些發生在組件渲染流程之外的操作。這些操作包括數據獲取、訂閱、手動更改 DOM，以及其他需要在組件加載和更新時執行的操作。
 
 > **詳細可至另一篇文章 [useEffect](./useEffect) 查看。**
 
