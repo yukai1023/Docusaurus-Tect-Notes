@@ -180,3 +180,11 @@ function CounterComponent() {
 ### 每個使用 Hook 的 component 都有其自己獨立的 state
 每次使用 Hook ，不論是內建的 Hook (如 `useState` 或 `useEffect`) 或是自定義 Hook 時，都是在為當前 component 創建一個全新且獨立的 `state` 和 `effect`。
 這也是為什麼可以在 **component 中多次調用同一個 Hook** 的原因。
+
+```jsx title="當 condition 為 false 時，將不會渲染 <Component />"
+{condition && <Component />}
+```
+---
+:::info[文章內容參考來源：]
+- [React Hook文件](https://zh-hant.legacy.reactjs.org/docs/hooks-intro.html)
+:::

@@ -185,6 +185,8 @@ console.log(copiedObj);   // name被修改，address和hobbies保持不變
 - **特殊對象處理不足**：不能處理像 Date、RegExp、Function、Map、Set 等特殊類型的對象。
 :::
 
+---
+
 :::info[文章內容參考來源：]
 
 - [MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/structuredClone)

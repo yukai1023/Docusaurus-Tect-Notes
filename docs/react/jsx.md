@@ -186,6 +186,7 @@ function DataDisplay({ children }) {
 ```jsx title="當 condition 為 false 時，將不會渲染 <Component />"
 {condition && <Component />}
 ```
+---
 :::info[文章內容參考來源：]
 - [React深入JSX文件](https://zh-hant.legacy.reactjs.org/docs/jsx-in-depth.html)
 :::
