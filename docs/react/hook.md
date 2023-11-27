@@ -41,9 +41,11 @@ const [myState, setMyState] = useState(initialValue);
 const [count, setCount] = useState(0);
 
 // 不能這樣做
+{/* highlight-next-line */}
 count = 20;
 
 // 必須透過 setState 用 immutable 的方式更改
+{/* highlight-next-line */}
 setCount(20);
 ```
 
@@ -54,17 +56,21 @@ setCount(20);
 ```jsx title="不會 rerender"
 const [items, setItems] = useState([{ a: 1, b: 2 }]);
 const changeItem = () => {
+  // highlight-start
   items[0].b = 3;
   setItems(items);
+  // highlight-end
 }
 ```
 
 ```jsx title="使用深拷貝改變 reference ，將會 rerender"
 const [items, setItems] = useState([{ a: 1, b: 2 }]);
 const changeItem = () => {
+  // highlight-start
   let netItems = [...items];
   netItems[0].b = 3;
   setItems(netItems);
+  // highlight-end
 }
 ```
 
@@ -222,5 +228,5 @@ function CounterComponent() {
 ---
 :::info[文章內容參考來源：]
 - [React Hook文件](https://zh-hant.legacy.reactjs.org/docs/hooks-intro.html)
-- [React中为什么要强调使用Immutable](https://zhuanlan.zhihu.com/p/357700487)
+- [React 中為什麼要強調使用 Immutable](https://zhuanlan.zhihu.com/p/357700487)
 :::
