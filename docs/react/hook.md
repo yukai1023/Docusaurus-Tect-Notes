@@ -32,6 +32,41 @@ const [myState, setMyState] = useState(initialValue);
 ### 方括號代表什麼?
 在 JavaScript 和 React 中，方括號 `[]` 主要有兩個用途：表示陣列和進行[解構賦值（Destructuring Assignment）](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%E9%99%A3%E5%88%97%E8%A7%A3%E6%A7%8B)。
 
+### Immutable
+> Never mutate this.state directly, as calling `setState()` afterwards may replace the mutation you made. Treat this.state as if it were immutable. [link](https://legacy.reactjs.org/docs/react-component.html#state)
+
+當我們說 `state` 是 immutable 的，意思是一旦 `state` 被設定之後，不能直接修改這個 `state` 物件。
+
+```jsx
+const [count, setCount] = useState(0);
+
+// 不能這樣做
+count = 20;
+
+// 必須透過 setState 用 immutable 的方式更改
+setCount(20);
+```
+
+這是因為 React 使用稱為 **shallow comparison**（**淺層比較**）的方法來檢測 `props` 的 `reference` 是否有變化，從而決定是否需要 rerender。如果直接修改 `state` ，`reference` 並不會改變，會導致 React 難以察覺到實際的數據變化。而如果 React 需要進行深層比較，這將會非常耗時且效率低下。
+
+因此 React 使用 immutable 的方式來更新 state，並不是直接修改現有數據，而是創建一個新的對象或陣列。這種做法確保了即使數據內容改變，它們的 `reference` 也會隨之改變，從而讓 React 能夠檢測到這些變化。
+
+```jsx title="不會 rerender"
+const [items, setItems] = useState([{ a: 1, b: 2 }]);
+const changeItem = () => {
+  items[0].b = 3;
+  setItems(items);
+}
+```
+
+```jsx title="使用深拷貝改變 reference ，將會 rerender"
+const [items, setItems] = useState([{ a: 1, b: 2 }]);
+const changeItem = () => {
+  let netItems = [...items];
+  netItems[0].b = 3;
+  setItems(netItems);
+}
+```
 
 ### Class Component 對比 Function Component
 ```jsx title="class component"
@@ -187,4 +222,5 @@ function CounterComponent() {
 ---
 :::info[文章內容參考來源：]
 - [React Hook文件](https://zh-hant.legacy.reactjs.org/docs/hooks-intro.html)
+- [React中为什么要强调使用Immutable](https://zhuanlan.zhihu.com/p/357700487)
 :::

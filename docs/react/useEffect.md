@@ -65,3 +65,8 @@ useEffect(() => {
   };
 }, []);
 ```
+
+---
+:::info[文章內容參考來源：]
+- [React Hook API 參考文件](https://zh-hant.legacy.reactjs.org/docs/hooks-reference.html#useeffect)
+:::
