@@ -3,7 +3,7 @@
 
 # Virtual DOM
 
-<img src={require("./img/virtualDOM.png").default} style={{width:'70%'}} />
+<!-- <img src={require("./img/virtualDOM.png").default} style={{width:'70%'}} /> -->
 
 ## 什麼是DOM?
 **DOM（文件物件模型，Document Object Model）** 是一種跨平台的、語言獨立的標準，用於表示和與 HTML 、 XML 和 SVG 文件互動。當瀏覽器加載一個網頁時，首先會解析 HTML 代碼，根據 HTML 標籤和文本建立一個 node tree（節點樹），這個 tree structure（樹狀結構）正是 DOM，它允許 CSS 來設定樣式與 JavaScript 讀取和修改網頁的結構和內容。
