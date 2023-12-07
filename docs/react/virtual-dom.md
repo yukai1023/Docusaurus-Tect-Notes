@@ -31,7 +31,7 @@ document.getElementById("changeText").addEventListener("click", function() {
 
 **Virtual DOM（虛擬文件物件模型）** 是一種編程概念，用於提升網頁應用的效能和效率。它是真實 DOM 的輕量級副本，存在於 memory 中的 JavaScript Object。當應用的狀態改變時，這些改變首先在虛擬 DOM 上進行，然後通過 **Diffing Algorithm（差異比演算法）** ，只將必要的改變應用到真實的 DOM 上，這種機制比起直接操作真實的 DOM 來說，有助於降低瀏覽器的 repaint（重繪）和 reflow（重排）次數。
 
-![示例横幅](./img/virtualDOM.png)
+<img src={require('../react/img/virtualDOM.png').default} alt="virtualDOM"/>
 
 ### Diffing Algorithm
 每當網頁需要更新時，React 會創建一個新的 Virtual DOM ， Diffing Algorithm 會檢查這個新的 Virtual DOM 和上一次的有什麼不一樣。
