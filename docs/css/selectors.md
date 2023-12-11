@@ -3,8 +3,8 @@
 
 # Selectors & Combinators
 
-## Selectors
-Selectors（選擇器）定義:指定「網頁上的哪一些元素」起來做樣式設定。
+## Selectors（選擇器）
+Selectors 定義:指定「網頁上的哪一些元素」起來做樣式設定。
 
 <img src={require('./img/selector.png').default} style={{width:'50%'}} alt="selector"/>
 
@@ -86,9 +86,9 @@ a[class~="logo"] {
 }
 ```
 
-## Combinators
+## Combinators（組合器）
 
-Combinators（組合器）是選擇器的一個部分，用於指定元素之間特定關係的一種語法，更精確地定位和選擇文檔中的元素。
+Combinators 是選擇器的一個部分，用於指定元素之間特定關係的一種語法，更精確地定位和選擇文檔中的元素。
 
 ### [Child combinator（子組合器）](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Child_combinator)
 
