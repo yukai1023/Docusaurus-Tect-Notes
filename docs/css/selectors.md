@@ -114,7 +114,7 @@ div span {
 
 ### [Next-sibling combinator (同層相鄰组合器)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Next-sibling_combinator)
 
-例如: `A + B` ，利用 **`+`** 區隔兩個元素，表示若 `A` 跟 `B` 如果在同一層，並且 `B` 為 `A` 的下一個元素時就會被套用 CSS。
+`A + B` ，利用 **`+`** 區隔兩個元素，表示若 `A` 跟 `B` 如果在同一層，並且 `B` 為 `A` 的下一個元素時就會被套用 CSS。
 
 ```css
 h1 + p {
