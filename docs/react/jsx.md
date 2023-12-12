@@ -94,7 +94,7 @@ function MyComponent() {
 ## 自定義 Component 必須由大寫字母開頭
 
 ### 小寫字母開頭的 Element
-React 會將其視為普通的 HTML 或 SVG 標籤。在 JSX 被轉換成 JavaScript 時，這些元素會被轉換成對應的字串，傳遞給 `React.createElement` 函數：
+React 會將其視為普通的 HTML 或 SVG 標籤。在 JSX 被轉換成 JavaScript 時，這些元素會被轉換成對應的字串，傳遞給 `React.createElement` 函式：
 
 - JSX 中的 `<div>` 會被轉換為 `React.createElement('div')`
 - JSX 中的 `<span>` 會被轉換為 `React.createElement('span')`

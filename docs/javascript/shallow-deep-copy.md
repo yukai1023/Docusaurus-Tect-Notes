@@ -134,7 +134,7 @@ console.log(clone); // { name: 'Alice', age: 25, contact: { email: 'alice_clone@
 ```
 
 :::warning[限制與缺點]
-- **不支援所有類型**：雖然 structuredClone 支援許多 JavaScript 內建類型，但它不支援某些專門的對象類型，如函數、錯誤對象、DOM 節點等。嘗試克隆這些不支援的類型會導致錯誤。
+- **不支援所有類型**：雖然 structuredClone 支援許多 JavaScript 內建類型，但它不支援某些專門的對象類型，如函式、錯誤對象、DOM 節點等。嘗試克隆這些不支援的類型會導致錯誤。
 - **可能改變原始對象**：如果原始對象包含可轉移對象（如 [ArrayBuffer](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)），在克隆過程中這些對象會從原始對象轉移到新對象，使得它們在原始對象中不再可用。
 :::
 

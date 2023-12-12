@@ -216,7 +216,7 @@ function CounterComponent() {
 }
 ```
 ### 必須以「use」開頭命名
-以 「use」 開頭的命名規範幫助開發者快速識別一個函數是否是一個 Hook。並且 React 團隊提供了一個名為 [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) 的 ESLint 插件，這個插件依賴於命名規則來自動化檢測 Hook 的正確使用。
+以 「use」 開頭的命名規範幫助開發者快速識別一個函式是否是一個 Hook。並且 React 團隊提供了一個名為 [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) 的 ESLint 插件，這個插件依賴於命名規則來自動化檢測 Hook 的正確使用。
 
 ### 每個使用 Hook 的 component 都有其自己獨立的 state
 每次使用 Hook ，不論是內建的 Hook (如 `useState` 或 `useEffect`) 或是自定義 Hook 時，都是在為當前 component 創建一個全新且獨立的 `state` 和 `effect`。
