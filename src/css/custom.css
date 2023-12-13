@@ -26,3 +26,7 @@
   --ifm-color-primary-lightest: #a4eefd;
   --docusaurus-highlighted-code-line-bg: rgba(240, 250, 255, 0.3);
 }
+
+.menu__link {
+  cursor: pointer;
+}
