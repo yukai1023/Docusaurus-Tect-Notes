@@ -53,7 +53,7 @@ export default function DocItemLayout({ children }) {
           </article>
           <DocItemPaginator />
         </div>
-        <div style={{ marginTop: '40px' }}>
+        <div style={{ marginTop: '20px' }}>
           <Giscus
             repo="yukai1023/Docusaurus-Tect-Notes"
             repoId="R_kgDOKrqx-A"
