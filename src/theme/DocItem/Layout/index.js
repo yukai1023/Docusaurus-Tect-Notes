@@ -55,19 +55,19 @@ export default function DocItemLayout({ children }) {
         </div>
         <div style={{ marginTop: '40px' }}>
           <Giscus
-            id="comments"
             repo="yukai1023/Docusaurus-Tect-Notes"
-            repoId="R_kgDOKrqx-A="
-            category="Announcements"
-            categoryId="DIC_kwDOKrqx-M4CbrRf"
+            repoId="R_kgDOKrqx-A"
+            category="General"
+            categoryId="DIC_kwDOKrqx-M4CbrRg"
             mapping="pathname"
-            term="Welcome to @giscus/react component!"
+            strict="0"
             reactionsEnabled="1"
             emitMetadata="0"
             inputPosition="top"
             theme={colorMode === "light" ? "light_tritanopia" : "dark_tritanopia"}
             lang="zh-TW"
             loading="lazy"
+            crossorigin="anonymous"
           />
         </div>
       </div>
