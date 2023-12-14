@@ -30,3 +30,14 @@
 .menu__link {
   cursor: pointer;
 }
+
+.markdown > h2::before {
+  content: "𝄪";
+  color: var(--ifm-color-primary);
+  margin-right: 10px;
+}
+
+.markdown > h3 {
+  padding-left: 10px;
+  border-left: 4px solid var(--ifm-color-primary);
+}

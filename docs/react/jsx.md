@@ -181,7 +181,7 @@ function DataDisplay({ children }) {
 ```
 ### Booleans, Null, 與 Undefined 會被忽略
 
-`true`、`false`、`null`以及`undefined`都是有效的 children，但它們在渲染時會被 React 忽略並且不會產生任何DOM輸出。這種行為對於條件渲染非常有用，因為它允許在不生成額外 DOM 節點的情況下控制組件的顯示與隱藏。
+`true` 、 `false` 、 `null` 以及 `undefined` 都是有效的 children，但它們在渲染時會被 React 忽略並且不會產生任何DOM輸出。這種行為對於條件渲染非常有用，因為它允許在不生成額外 DOM 節點的情況下控制組件的顯示與隱藏。
 
 ```jsx title="當 condition 為 false 時，將不會渲染 <Component />"
 {condition && <Component />}
