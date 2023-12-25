@@ -32,6 +32,20 @@ const [myState, setMyState] = useState(initialValue);
 ### 方括號代表什麼?
 在 JavaScript 和 React 中，方括號 `[]` 主要有兩個用途：表示陣列和進行[解構賦值（Destructuring Assignment）](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%E9%99%A3%E5%88%97%E8%A7%A3%E6%A7%8B)。
 
+### 使用函式初始化的區別
+
+```jsx title="當直接提供一個初始值給 useState 時，這個值在每次組件渲染時都會被使用"
+const [state, setState] = useState(initialValue);
+```
+
+```jsx title="當提供一個函式給 useState 時，這個函式只會在組件的初始渲染時被執行一次"
+const [state, setState] = useState(() => {
+  // 計算初始值的邏輯
+  const initialValue = performSomeExpensiveComputation();
+  return initialValue;
+});
+```
+
 ### Immutable
 > Never mutate this.state directly, as calling `setState()` afterwards may replace the mutation you made. Treat this.state as if it were immutable. [link](https://legacy.reactjs.org/docs/react-component.html#state)
 
