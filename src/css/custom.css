@@ -44,6 +44,11 @@
   border-left: 4px solid var(--ifm-color-primary);
 }
 
+.markdown>h4 {
+  text-decoration: underline 1px double;
+  text-decoration-color: var(--ifm-color-primary);
+}
+
 .table-of-contents__left-border,
 .table-of-contents li,
 .table-of-contents ul {

@@ -66,7 +66,59 @@ useEffect(() => {
 }, []);
 ```
 
+## useLayoutEffect
+
+其功能和 `useEffect` 相似，但在執行時機上有所不同。 `useLayoutEffect` 主要用於處理 DOM 渲染後的同步操作，確保在瀏覽器進行 **重繪（repaints）** 之前執行。
+
+### 差異比較
+
+#### useEffect
+
+- **異步執行**： `useEffect` 在 DOM 更新完成後異步執行，不會阻塞瀏覽器的重繪過程，因此不會影響到網頁的渲染速度。
+
+- **用途**：適合用於那些不需要立即使用或修改 DOM 的操作，例如發送網絡請求、設置事件監聽器或任何不會對用戶界面產生立即影響的操作。
+
+- **避免阻塞**：由於其異步特性， `useEffect` 是一種避免阻塞瀏覽器渲染的好方法，特別是在進行重的計算或具有潛在延遲的操作時。
+
+#### useLayoutEffect
+
+- **同步執行**： `useLayoutEffect` 在 DOM 更新完成後，但在瀏覽器重繪之前同步執行，這意味著可以在瀏覽器進行下一次重繪前，同步讀取或修改 DOM 。
+
+- **用途**：適合用於需要立即讀取或修改 DOM 的操作，例如測量 DOM 節點的尺寸或位置、執行 DOM 動畫等，它確保在瀏覽器下一次重繪前，所有 DOM 的變更都已經完成。
+
+- **避免閃爍**：當 DOM 變更可能導致可見的布局變化或閃爍時，使用 `useLayoutEffect` 可以在用戶看到這些變化之前完成這些更新，從而避免不良的用戶體驗。
+
+:::warning[注意]
+
+由於 `useLayoutEffect` 在瀏覽器重繪前執行，在進行大量計算或有復雜邏輯時，可能會導致性能問題。
+
+:::
+
+```jsx title="範例"
+import React, { useLayoutEffect, useRef, useState } from 'react';
+
+function MeasureExample() {
+    const [size, setSize] = useState({ width: 0, height: 0 });
+    const ref = useRef();
+
+    useLayoutEffect(() => {
+      if (ref.current) {
+        // 獲取DOM元素的尺寸
+        const { width, height } = ref.current.getBoundingClientRect();
+        setSize({ width, height });
+      }
+    }, []);
+
+    return (
+      <div>
+        <div ref={ref}>這是一個要測量的元素</div>
+        <p>元素尺寸：寬度 {size.width}px，高度 {size.height}px</p>
+      </div>
+    );
+}
+```
 ---
+
 :::info[文章內容參考來源：]
 - [React Hook API 參考文件](https://zh-hant.legacy.reactjs.org/docs/hooks-reference.html#useeffect)
 :::
