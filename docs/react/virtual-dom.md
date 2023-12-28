@@ -63,7 +63,7 @@ function UserList(props) {
 ```
 
 ### 渲染頁面的兩個階段
-在 React 中，渲染過程被分為兩個主要階段：
+在 React 中，渲染過程指的是 React 處理組件的渲染邏輯，被分為兩個主要階段：
 
 - **Reconciliation（調度階段）**：React 會根據組件的新 props 或 state 生成新的 Virtual DOM tree。然後通過 Diffing Algorithm 從而找出需要更新的元素，這些變化會被放入一個更新隊列中，等待後續處理。
 
