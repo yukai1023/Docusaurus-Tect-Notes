@@ -1,4 +1,4 @@
-# Website
+# [Website](kai-tect-notes.vercel.app/)
 
 此專案為個人技術筆記網站，用來紀錄自己技術成長之旅，使用 [Docusaurus 2](https://docusaurus.io/) 建構。
 
