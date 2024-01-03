@@ -1,6 +1,6 @@
 # Website
 
-此專案為個人技術筆記網頁，使用 [Docusaurus 2](https://docusaurus.io/) 建構。
+此專案為個人技術筆記網站，用來紀錄自己技術成長之旅，使用 [Docusaurus 2](https://docusaurus.io/) 建構。
 
 ![image](https://img.onl/VPkoZi)
 
