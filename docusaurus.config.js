@@ -39,6 +39,9 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+          ],
           routeBasePath: '/',
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
@@ -47,7 +50,16 @@ const config = {
             'https://github.com/yukai1023/Docusaurus-Tect-Notes/tree/main/',
           showLastUpdateTime: true
         },
+        pages: {
+          remarkPlugins: [require('@docusaurus/remark-plugin-npm2yarn')],
+        },
         blog: {
+          remarkPlugins: [
+            [
+              require('@docusaurus/remark-plugin-npm2yarn'),
+              {converters: ['pnpm']},
+            ],
+          ],
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -131,6 +143,7 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+        additionalLanguages: ['JSON', 'Bash', 'Git'],
       },
     }),
 };
