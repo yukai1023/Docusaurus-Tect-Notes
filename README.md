@@ -2,6 +2,8 @@
 
 此專案為個人技術筆記網頁，使用 [Docusaurus 2](https://docusaurus.io/) 建構。
 
+![image](https://img.onl/VPkoZi)
+
 ## 功能套件
 
 - 搜尋系統：[algolia](https://www.algolia.com/)
