@@ -40,7 +40,7 @@ const config = {
       ({
         docs: {
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
           routeBasePath: '/',
           sidebarPath: './sidebars.js',
@@ -57,7 +57,7 @@ const config = {
           remarkPlugins: [
             [
               require('@docusaurus/remark-plugin-npm2yarn'),
-              {converters: ['pnpm']},
+              { converters: ['pnpm'] },
             ],
           ],
           showReadingTime: true,
@@ -90,6 +90,11 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
+          {
+            to: '/portfolio',
+            label: 'Portfolio',
+            position: 'right'
+          },
           {
             href: 'https://github.com/yukai1023',
             label: 'GitHub',
