@@ -91,7 +91,7 @@ const config = {
         },
         items: [
           {
-            to: '/portfolio',
+            to: '/portfolio/web',
             label: 'Portfolio',
             position: 'right'
           },

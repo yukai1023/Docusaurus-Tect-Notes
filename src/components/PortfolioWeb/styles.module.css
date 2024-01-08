@@ -1,0 +1,53 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.feature {
+  margin-top: 20px;
+}
+
+.feature h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureImg {
+  height: 200px;
+  width: 400px;
+  object-fit: contain;
+}
+
+.githubLogo {
+  margin-left: 15px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.githubLogo:hover {
+  background-color: rgba(203, 202, 202, 0.5);
+  border-radius: 50%;
+}
+
+.description {
+  text-align: start;
+}
+
+.badge {
+  color: #fff;
+  background-color: #6c757d;
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  margin: 0 0.5em 1em;
+  font-size: 90%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
