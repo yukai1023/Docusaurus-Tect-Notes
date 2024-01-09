@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
