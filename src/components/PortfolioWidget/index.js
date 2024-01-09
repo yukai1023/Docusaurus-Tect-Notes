@@ -67,7 +67,7 @@ function Feature({ img, video, title, url, description, badges, githubUrl }) {
       <div className="text--center">
         <a href={url} target="_blank">
           {img && <img src={img} className={styles.featureImg} role="img" />}
-          {video && <video src={video} className={styles.featureVideo} controls={false} loop muted autoPlay />}
+          {video && <video src={video} className={styles.featureVideo} controls={false} loop muted autoPlay playsInline />}
         </a>
       </div>
       <div className="text--center padding-horiz--md">

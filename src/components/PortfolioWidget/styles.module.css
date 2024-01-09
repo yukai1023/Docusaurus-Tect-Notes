@@ -23,6 +23,7 @@
 
 .featureVideo {
   height: 250px;
+  pointer-events: none;
 }
 
 .githubLogo {
@@ -54,4 +55,10 @@
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25rem;
+}
+
+@media screen and (max-width: 996px) {
+  .featureVideo {
+    height: 200px;
+  }
 }
