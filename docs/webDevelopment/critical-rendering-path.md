@@ -3,7 +3,7 @@
 
 # Critical Rendering Path
 
-<img src={require('./img/criticalRenderingPath.png').default} alt="criticalRenderingPath"/>
+<img src={require('./img/critical-rendering-path/criticalRenderingPath.png').default} alt="criticalRenderingPath"/>
 
 Critical Rendering Path（關鍵渲染路徑），描述了從瀏覽器加載到渲染網頁到螢幕上的整個過程，這個過程中的每一步都對網頁的加載速度和性能有顯著影響。
 
@@ -47,7 +47,7 @@ img {
 }
 ```
 
-<img src={require('./img/CSSOM.png').default} alt="CSSOM"/>
+<img src={require('./img/critical-rendering-path/CSSOM.png').default} alt="CSSOM"/>
 
 ## 建立 Render Tree
 

@@ -6,7 +6,7 @@
 ## Selectors（選擇器）
 Selectors 定義:指定「網頁上的哪一些元素」起來做樣式設定。
 
-<img src={require('./img/selector.png').default} style={{width:'50%'}} alt="selector"/>
+<img src={require('./img/selector/selector.png').default} style={{width:'50%'}} alt="selector"/>
 
 ### [Class selectors（類選擇器）](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Class_selectors)
 

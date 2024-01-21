@@ -32,7 +32,7 @@ CORS 是一種安全機制，允許網站指定哪些其他網站可以安全地
 
 但如果沒有 CORS 標頭或不允許該來源的請求，瀏覽器將會攔截並拋出錯誤，JavaScript 則無法訪問 Response。
 
-<img src={require('./img/errorCORS.png').default} alt="errorCORS"/>
+<img src={require('./img/cors/errorCORS.png').default} alt="errorCORS"/>
 
 ### 簡單請求（Simple Requests）
 
@@ -40,9 +40,9 @@ CORS 是一種安全機制，允許網站指定哪些其他網站可以安全地
 
 對於簡單請求，瀏覽器會直接發送該請求到伺服器，然後檢查伺服器回應的標頭，如果 `Access-Control-Allow-Origin` 標頭中包含了發送請求的來源，則請求成功。
 
-<img src={require('./img/Access-Control-Allow-Origin-Url.png').default} alt="Access-Control-Allow-Origin" style={{ margin: '20px auto', display: 'block', boxShadow: '0 0 0 1px' }} />
+<img src={require('./img/cors/Access-Control-Allow-Origin-Url.png').default} alt="Access-Control-Allow-Origin" style={{ margin: '20px auto', display: 'block', boxShadow: '0 0 0 1px' }} />
 
-<img src={require('./img/Access-Control-Allow-Origin.png').default} alt="Access-Control-Allow-Origin" style={{ margin: '20px auto', display: 'block', boxShadow: '0 0 0 1px' }} />
+<img src={require('./img/cors/Access-Control-Allow-Origin.png').default} alt="Access-Control-Allow-Origin" style={{ margin: '20px auto', display: 'block', boxShadow: '0 0 0 1px' }} />
 
 <p style={{ textAlign: 'center' }}>`*` 星號為萬用字元，代表伺服器允許任何來源的網頁請求它的資源。</p>
 

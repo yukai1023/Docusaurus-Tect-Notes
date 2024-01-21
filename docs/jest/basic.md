@@ -60,13 +60,13 @@ npm run test
 ```
 
 終端機執行後，將顯示測試的結果：
-<img src={require('./img/runTest.png').default} alt="runTest" style={{ borderRadius: '10px', width: '40%' }} />
+<img src={require('./img/basic/runTest.png').default} alt="runTest" style={{ borderRadius: '10px', width: '40%' }} />
 
 會顯示測試了哪些 `.test.js` 檔案，如果測試內的結果正確符合的話會輸出 PASS 。
 
 為了進行一次錯誤測試，這邊把預期（toBe）的數字改成 4 ：
 
-<img src={require('./img/runErrorTest.png').default} alt="runErrorTest" style={{ borderRadius: '10px', width: '60%' }} />
+<img src={require('./img/basic/runErrorTest.png').default} alt="runErrorTest" style={{ borderRadius: '10px', width: '60%' }} />
 
 - **Expected**：測試中期望得到的結果。
 - **Received**：測試中實際得到的結果。

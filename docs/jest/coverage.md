@@ -58,7 +58,7 @@ describe('sum', () => {
 
 執行 `npm run test:coverage`：
 
-<img src={require('./img/fiftyPercentTest.png').default} alt="fiftyPercentTest" style={{ borderRadius: '10px', width: '80%' }} />
+<img src={require('./img/coverage/fiftyPercentTest.png').default} alt="fiftyPercentTest" style={{ borderRadius: '10px', width: '80%' }} />
 
 - **File**：測試文件名。
 - **Stmts（Statements）**：語句覆蓋率。
@@ -71,11 +71,11 @@ describe('sum', () => {
 
 運行完成後，會在項目目錄中生成一個 `coverage` 文件夾，裡面包含了詳細的覆蓋率報告，可以打開 `coverage/lcov-report/index.html` 來查看測試報告：
 
-<img src={require('./img/fiftyPercentReport.png').default} alt="fiftyPercentReport" style={{ borderRadius: '10px', width: '100%' }} />
+<img src={require('./img/coverage/fiftyPercentReport.png').default} alt="fiftyPercentReport" style={{ borderRadius: '10px', width: '100%' }} />
 
 點擊 `sum.js` 有更詳盡的測試結果：
 
-<img src={require('./img/fiftyPercentDetail.png').default} alt="fiftyPercentDetail" style={{ borderRadius: '10px', width: '70%' }} />
+<img src={require('./img/coverage/fiftyPercentDetail.png').default} alt="fiftyPercentDetail" style={{ borderRadius: '10px', width: '70%' }} />
 
 ## 達到 100% 覆蓋率
 
@@ -93,15 +93,15 @@ describe('average', () => {
 
 再次執行 `npm run test:coverage`：
 
-<img src={require('./img/hundredPercentTest.png').default} alt="hundredPercentTest" style={{ borderRadius: '10px', width: '80%' }} />
+<img src={require('./img/coverage/hundredPercentTest.png').default} alt="hundredPercentTest" style={{ borderRadius: '10px', width: '80%' }} />
 
 ### 測試報告
 
-<img src={require('./img/hundredPercentReport.png').default} alt="hundredPercentReport" style={{ borderRadius: '10px', width: '80%' }} />
+<img src={require('./img/coverage/hundredPercentReport.png').default} alt="hundredPercentReport" style={{ borderRadius: '10px', width: '80%' }} />
 
 ---
 
-<img src={require('./img/hundredPercentDetail.png').default} alt="hundredPercentDetail" style={{ borderRadius: '10px', width: '80%' }} />
+<img src={require('./img/coverage/hundredPercentDetail.png').default} alt="hundredPercentDetail" style={{ borderRadius: '10px', width: '80%' }} />
 
 ---
 :::info[文章內容參考來源：]

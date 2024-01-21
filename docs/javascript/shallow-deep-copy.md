@@ -5,7 +5,7 @@ sidebar_position: 1
 # Shallow Copy & Deep Copy
 
 ## 型別
-<img src={require("./img/dataTypes.png").default} style={{width:'60%'}} />
+<img src={require("./img/shallow-deep-copy/dataTypes.png").default} style={{width:'60%'}} />
 
 JavaScript內建的型別主要可以分成**基本型別**(Primitives)與**物件型別** (Object)兩大類。
 
@@ -37,7 +37,7 @@ console.log(objB); // { name: 'banana' }
 在修改 `objB` 時，也會修改到 `objA` 的值。
 
 ## Shallow Copy（淺拷貝）與 Deep Copy（深拷貝）
-<img src={require("./img/shallowDeepCopy.png").default} style={{width:'70%'}} />
+<img src={require("./img/shallow-deep-copy/shallowDeepCopy.png").default} style={{width:'70%'}} />
 
 - **淺拷貝** — 只能完成第一層的淺層複製，若有第二層結構時，還是依據參考特性作處理，也就代表指向記憶體位址還是一樣的。
 

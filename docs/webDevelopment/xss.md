@@ -20,7 +20,7 @@ XSS 攻擊主要分為三種類型，每種都有其特定的攻擊方式和防�
 
 Stored XSS（儲存型 XSS），在沒有適當安全防護的情況下，攻擊者利用像文章、評論區或個人資料欄位這樣的用戶輸入區域來存儲惡意腳本到後端資料庫，當其他用戶瀏覽這些包含惡意腳本的頁面時，這些腳本會與正常內容一同被加載並在用戶的瀏覽器上自動執行。
 
-<img src={require("./img/storedXSS.png").default} />
+<img src={require("./img/xss/storedXSS.png").default} />
 
 #### 範例
 
@@ -36,7 +36,7 @@ Stored XSS（儲存型 XSS），在沒有適當安全防護的情況下，攻擊
 
 Reflected XSS（反射型 XSS），這種攻擊通過將惡意代碼藏在 URL，然後誘使用戶點擊或訪問，當用戶進行加載後，網站會將惡意腳本作為用戶輸入的一部分處理並返回給瀏覽器，導致該腳本在瀏覽器上自動執行。
 
-<img src={require("./img/reflectedXSS.png").default} />
+<img src={require("./img/xss/reflectedXSS.png").default} />
 
 #### 範例
 
@@ -64,7 +64,7 @@ https://example.com/search?query=<script>alert('這是一個 Reflected XSS 攻�
 
 DOM Based XSS（DOM基礎型XSS），與 Reflect XSS 非常類似，但此類型完全在客戶端執行，不涉及到伺服器端的腳本處理。攻擊主要發生在網站未檢查輸入的資料，並直接用於 DOM 操作，由於 JavaScript 能夠動態地修改網頁的DOM，惡意腳本也就能夠以這種方式改變網頁內容和行為。
 
-<img src={require("./img/domBasedXSS.png").default} />
+<img src={require("./img/xss/domBasedXSS.png").default} />
 
 #### 範例
 
@@ -88,7 +88,7 @@ document.getElementById('output').innerHTML = document.getElementById('userInput
 
 CSP（內容安全策略，Content Security Policy）是一種安全標準，後端透過設置 HTTP Header 中特定的指令，如白名單機制般允許網站管理哪些外部資源可以被加載和執行，像是可以指定只允許加載來自特定 `domain` 的腳本，或者禁止加載任何外部圖像。
 
-<img src={require('./img/CSP.png').default} alt="Access-Control-Allow-Origin" style={{ width: '50%', margin: '20px auto', display: 'block', boxShadow: '0 0 0 1px' }} />
+<img src={require('./img/xss/CSP.png').default} alt="Access-Control-Allow-Origin" style={{ width: '50%', margin: '20px auto', display: 'block', boxShadow: '0 0 0 1px' }} />
 
 假設你想設置一個政策，僅允許從自己的域名加載腳本和樣式，同時阻止所有的圖片加載，可以在 HTTP 頭部中設置：
 
