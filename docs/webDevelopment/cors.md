@@ -1,14 +1,11 @@
----
-title: CORS
----
 
-# CORS（Cross-Origin Resource Sharing，跨來源資源共享）
+# CORS
 
-CORS 是一種安全機制，允許網站指定哪些其他網站可以安全地訪問其資源，如 API、字體和腳本，從而在保護數據安全的同時實現跨域資源共享。
+CORS（Cross-Origin Resource Sharing，跨來源資源共享）是一種安全機制，用於限制在網站上的跨域請求，如 API、字體和腳本，從而在保護數據安全的同時實現跨域資源共享。
 
 ## 同源政策（Same-origin policy）
 
-同源政策是指在瀏覽器中，允許某個網頁腳本訪問另一個網頁的資料，必須來自相同來源，以避免跨站腳本攻擊（Cross-Site Scripting, XSS）和其他安全風險。
+同源政策是指在瀏覽器中，請求任何網站的資料時必須來自相同來源，以避免跨站腳本攻擊（Cross-Site Scripting, XSS）和其他安全風險。
 
 同源的定義包括三個主要部分：
 
@@ -76,4 +73,5 @@ CORS 是一種安全機制，允許網站指定哪些其他網站可以安全地
 - [MDN](https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS)
 - [CORS 是什麼? 為什麼要有 CORS?](https://www.explainthis.io/zh-hant/swe/what-is-cors)
 - [1.6 CORS](https://jack1in.gitbook.io/font-end/1.-web/1.6-cors)
+
 :::

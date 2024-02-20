@@ -5,7 +5,10 @@
 
 
 ## 什麼是 DOM?
-**DOM（文件物件模型，Document Object Model）** 是一種跨平台的、語言獨立的標準，用於表示和與 HTML 、 XML 和 SVG 文件互動。當瀏覽器加載一個網頁時，首先會解析 HTML 代碼，根據 HTML 標籤和文本建立一個 node tree（節點樹），這個 tree structure（樹狀結構）正是 DOM，它允許 CSS 來設定樣式與 JavaScript 讀取和修改網頁的結構和內容。
+**DOM（文件物件模型，Document Object Model）** 是一種樹狀資料結構，表示瀏覽器中的畫面結構。當瀏覽器加載一個網頁時，首先會解析 HTML 代碼，根據 HTML 標籤和文本建立一個 node tree，這個 tree structure 正是 DOM，它允許 CSS 來設定樣式與 JavaScript 讀取和修改網頁的結構和內容。
+
+瀏覽器的渲染與 DOM 有密切連動關係，當對 DOM 進行任何操作時，瀏覽器將自動執行相關流程來重新繪製畫面，因此過多的 DOM 操作會導致網頁效能下降。
+
 
 ```html title="html範例"
 <!DOCTYPE html>
@@ -29,14 +32,15 @@ document.getElementById("changeText").addEventListener("click", function() {
 
 ## 什麼是 Virtual DOM?
 
-**Virtual DOM（虛擬文件物件模型）** 是一種編程概念，用於提升網頁應用的效能和效率。它是真實 DOM 的輕量級副本，存在於 memory 中的 JavaScript Object。當應用的狀態改變時，這些改變首先在虛擬 DOM 上進行，然後通過 **Diffing Algorithm（差異比演算法）** ，只將必要的改變應用到真實的 DOM 上，這種機制比起直接操作真實的 DOM 來說，有助於降低瀏覽器的 repaint（重繪）和 reflow（重排）次數。
+**Virtual DOM（虛擬文件物件模型）** 是一種程式設計概念，用於處理 UI 結構並提升效能。虛擬 DOM 並不是從實際的 DOM 複製過來的，而是創建新的虛擬結構來模擬實際的 DOM，是存在於 memory 中的 JavaScript Object。
+
+當畫面需要更新時，會先產生新的 Virtual DOM 結構，接著通過 **Diffing Algorithm（差異比演算法）** 比較新舊 Virtual DOM 的結構差異，最終只將必要的改變應用到真實的 DOM 上，這種機制比起直接操作真實的 DOM 來說，有助於降低瀏覽器的 repaint（重繪）和 reflow（重排）次數，減少效能成本。
 
 <img src={require('./img/virtual-dom/virtualDOM.png').default} alt="virtualDOM"/>
 
 ### Diffing Algorithm
-每當網頁需要更新時，React 會創建一個新的 Virtual DOM ， Diffing Algorithm 會檢查這個新的 Virtual DOM 和上一次的有什麼不一樣。
 
-這個比較過程從根節點開始，並遍歷整個樹結構。算法會檢查每個節點以及其子節點。在比較過程中，React 使用了一種稱為 **“keys”** 的機制來有效地比較列表中的元素，從而確保只有真正變化的元素被重新渲染。
+這個結構比較過程會從根節點開始，並遍歷整個樹結構，算法會檢查每個節點以及其子節點。在比較過程中，React 使用了一種稱為 **“keys”** 的機制來有效地比較列表中的元素，從而確保只有真正變化的元素被重新渲染。
 
 ```jsx title="keys範例"
 function UserList(props) {

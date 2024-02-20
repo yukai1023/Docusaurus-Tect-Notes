@@ -1,10 +1,7 @@
----
-title: XSS
----
 
-# XSS（Cross-Site Scripting，跨站腳本攻擊）
+# XSS
 
-XSS 是一種網路安全漏洞，攻擊者將惡意腳本注入到正常的網頁中，當其他用戶瀏覽這些被篡改的網頁時，這些腳本就會在他們的瀏覽器中執行。
+XSS（Cross-Site Scripting，跨站腳本攻擊）是一種網路攻擊方式，攻擊者將惡意腳本注入到正常的網頁中，當其他用戶瀏覽這些被篡改的網頁時，這些腳本就會在他們的瀏覽器中執行。
 
 為什麼稱之為「Cross-Site（跨站）」呢？這是因為攻擊行為往往發生在用戶與信任網站間的交互過程中，並非直接來自攻擊者的網站，這種從信任來源發出的攻擊能夠繞過瀏覽器的 **Same-origin policy（同源政策）**。
 
@@ -58,6 +55,7 @@ https://example.com/search?query=<script>alert('這是一個 Reflected XSS 攻�
 
 - 攻擊者經常會使用 URL 編碼（URL encoding）或短網址服務來掩飾惡意 URL，使其看起來不那麼明顯或可疑。
 - 在一些情況下，攻擊者可能會利用存在 XSS 漏洞的第三方服務（例如廣告或小工具）來發起攻擊。
+
 :::
 
 ### DOM Based XSS
@@ -108,6 +106,7 @@ Content-Security-Policy:
 
 - React 在 JSX 的設計上已經進行自動轉義等防範 XSS 的處理，在官網也有[相關說明](https://zh-hant.legacy.reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)。
 - 雖然 React 已經做了相關處理，但不代表就是百分之百安全，比如使用 [`dangerouslySetInnerHTML`](https://zh-hant.legacy.reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml) 的地方依然要謹慎小心。
+
 :::
 
 ---
@@ -118,4 +117,5 @@ Content-Security-Policy:
 - [幼幼班也能懂的 2017 OWASP TOP 10](https://medium.com/hannah-lin/%E5%B9%BC%E5%B9%BC%E7%8F%AD%E4%B9%9F%E8%83%BD%E6%87%82%E7%9A%84-owasp-top-10-692764c51f61#dd52)
 - [身為 Web 工程師，你一定要知道的幾個 Web 資訊安全議題](https://medium.com/starbugs/%E8%BA%AB%E7%82%BA-web-%E5%B7%A5%E7%A8%8B%E5%B8%AB-%E4%BD%A0%E4%B8%80%E5%AE%9A%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%B9%BE%E5%80%8B-web-%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%AD%B0%E9%A1%8C-29b8a4af6e13)
 - [React项目里我们不用担心XSS攻击吗？](https://juejin.cn/post/7217795738691911717)
+
 :::
