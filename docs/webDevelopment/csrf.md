@@ -68,13 +68,17 @@ HTTP Referrer 用來表示從哪連結到目前的網頁，也就可以檢查訪
 
 - `Strict`：Cookie 只會在用戶直接訪問該網站時被發送，如果是透過第三方網站的連接，則不會被包含在請求中。
 
-- `Lax`：
+- `Lax`：允許在某些情況下發送第三方 Cookie，下表比較 `Lax` 與只有同源政策時，面對跨來源請求送出 Cookie 的差異。
 
--
+<img src={require('./img/csrf/sameSite=Lax.png').default} alt="sameSite=Lax" style={{ width: '90%', margin: '10px auto', display: 'block' }} />
+
+- `none`：允許 Cookie 在所有的跨站請求中被發送，但必須同時設定 Secure，這表示這些 Cookie 只能在 HTTPS 環境下被傳輸。
 
 ---
 :::info[文章內容參考來源：]
 
-- MDN、React官網
-
+- [什麼是 CSRF 攻擊？如何防範？](https://www.explainthis.io/zh-hant/swe/what-is-csrf)
+- [談 SameSite 設定對 Cookie 的影響與注意事項](https://medium.com/%E7%A8%8B%E5%BC%8F%E7%8C%BF%E5%90%83%E9%A6%99%E8%95%89/%E5%86%8D%E6%8E%A2%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96-%E8%AB%87-samesite-%E8%A8%AD%E5%AE%9A%E5%B0%8D-cookie-%E7%9A%84%E5%BD%B1%E9%9F%BF%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85-6195d10d4441)
+- [零基礎資安系列（一）認識 CSRF](https://tech-blog.cymetrics.io/posts/jo/zerobased-cross-site-request-forgery/)
+- [防禦CSRF攻擊的五種方法](https://gcdeng.com/blog/five-ways-to-defend-against-CSRF-attacks)
 :::
