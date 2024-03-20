@@ -1,9 +1,7 @@
 ---
-sidebar_position: 1
 ---
 
 # Expression ＆ Statement
-
 
 ## Expression（表達式）
 程式碼執行後**會回傳結果**。完整類別可至 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Expressions_and_operators)。

@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 ---
 
 # Shallow Copy & Deep Copy

@@ -1,7 +1,5 @@
 ---
-sidebar_position: 1
 ---
-
 # Event Capturing and Bubbling
 
 ## 事件傳遞機制
