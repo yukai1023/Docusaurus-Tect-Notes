@@ -23,7 +23,7 @@ aspect-ratio: width-value / height-value;
 
 ## padding-top / padding-bottom
 
-當 `padding` 設置為百分比時，`padding-top` 和 `padding-bottom` 的值是根據元素的 `width` 計算的，如果一個元素的寬度是 `300px`，那設置 `padding-top: 100%` 的值等於 `300px`。
+當 `padding` 設置為百分比時，`padding-top` 和 `padding-bottom` 的值是根據元素的父元素的寬度 `width` 計算的，如果一個元素的的父元素寬度是 `300px`，那設置 `padding-top: 100%` 的值等於 `300px`，不管該元素自身的寬度是多少。
 
 | 寬高比 | padding-bottom / padding-top |
 |:--------:|:--------:|
